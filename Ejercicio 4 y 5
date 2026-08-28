@@ -1,0 +1,29 @@
+# Antonio Perdomo ingenieria en ti 607974
+
+# ejercicio 4
+arch = input("Ingresar nombre de archivo: ")
+f = open(arch)
+resultado = []
+
+for l in f:
+    trozos = l.split()
+    for p in trozos:
+        if p not in resultado:
+            resultado.append(p)
+
+resultado.sort()
+print(resultado)
+
+
+# ejercicio 5
+doc = input("Ingresa un nombre de archivo: ")
+stream = open(doc)
+n = 0
+
+for renglon in stream:
+    if renglon.startswith("From "):
+        tokens = renglon.split()
+        print(tokens[1])
+        n += 1
+
+print("Hay", n, "lineas en el archivo con la palabra From al inicio")
